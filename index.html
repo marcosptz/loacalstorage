@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="script.js"></script>
     <title>Local Storege</title>
 </head>
 <body>
+    <div id="msg" role="alert">
+    </div>
+    <!-- <p id="msg"></p> -->
     <div class="container" align="center" style="border: 1px solid #000; border-radius: 5px;">
         <form name="dados">
             <div class="form-row">
                 <div class="col"><br>
+                    <label>Id : </label><br>
+                    <input type="text" onfocusout="salvar()" name="id" id="id"><br><br>
                     <label>Qtd: </label><br>
-                    <input type="text" onfocusout="salvar()" name="qtd" id="qtd" size="35"><br><br>
+                    <input type="text" onfocusout="salvar()" name="qtd" id="qtd"><br><br>
                     <label>Comp (x): </label><br>
-                    <input type="text" onfocusout="salvar()" name="comp" id="comp" size="35"><br><br>
+                    <input type="text" onfocusout="salvar()" name="comp" id="comp"><br><br>
                     <label>Larg (x): </label><br>
-                    <input type="text" onfocusout="salvar()" name="larg" id="larg" size="35"><br><br>
+                    <input type="text" onfocusout="salvar()" name="larg" id="larg"><br><br>
                     <label>Descrição: </label><br>
-                    <input type="text" onfocusout="salvar()" name="desc" id="desc" size="35"><br><br>
+                    <input type="text" onfocusout="salvar()" name="desc" id="desc"><br><br>
                     
-                    <!-- <input type="button" value="Salvar" onclick="salvar()"> -->
-                    <input type="button" value="Exibir" onclick="exibir()">
+                    <input type="button" value="Salvar" onclick="excluir()">
+                    <!-- <input type="button" value="Exibir" onclick="exibir()"> -->
                 </div>
             </div>            
         </form>    
