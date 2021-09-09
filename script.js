@@ -2,7 +2,7 @@ var gqtd, gcomp, glarg, gdesc;
 
 // Verifica se o browser tem suporte ao localStorage
 if (typeof (Storage) != 'undefined') {
-    document.write('Suporte a Web Storage Existente !');
+    document.write('Suporte a Web Storage Ativo !');
 } else {
     document.write('Sem suporte a Web Storage !');
 }
