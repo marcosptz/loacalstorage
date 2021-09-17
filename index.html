@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="script.js"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <title>Local Storege</title>
 </head>
 <body>
@@ -18,8 +18,8 @@
         <form name="dados">
             <div class="form-row">
                 <div class="col"><br>
-                    <label>Id : </label><br>
-                    <input type="text" onfocusout="salvar()" name="id" style="border-top-width:0; border-right-width:0; border-left-width:0; border-bottom-width:1px"><br><br>
+                    <label class="lb">Id : </label><br>
+                    <input type="text" onfocusout="salvar()" class="lb" name="id" style="border-top-width:0; border-right-width:0; border-left-width:0; border-bottom-width:1px"><br><br>
                     <label>Qtd: </label><br>
                     <input type="text" onfocusout="salvar()" name="qtd" ><br><br>
                     <label>Comp (x): </label><br>
@@ -31,10 +31,14 @@
                     
                     <input type="button" value="Salvar" onclick="excluir()">
                     <!-- <input type="button" value="Exibir" onclick="exibir()"> -->
-                    <input type="text" name="teste"><br><br>
+                    <input class="salvar-valor peca" type="text" name="teste"><br><br>
                     <input type="button" value="Testar" onclick="func_teste()">
                 </div>
-            </div>            
+            </div><br><br>
+            <div id="divPrincipal">
+                <span>Texto inicial</span>
+            </div>
+            <button id="btnTeste">Testar</button>            
         </form>    
     </div>
 </body>

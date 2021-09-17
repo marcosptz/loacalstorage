@@ -2,7 +2,7 @@ var gid, gqtd, gcomp, glarg, gdesc;
 
 // Verifica se o browser tem suporte ao localStorage
 if (typeof (Storage) != 'undefined') {
-    if (localStorage) { //verifica se existe dados salvo no localstorage
+    if (localStorage.status==1) { //verifica se existe dados salvo no localstorage
         document.write('<p>Você possui rascunho não salvo, se desejar restaurar click no botão</p>');
         document.write('<label>Id do usuário: </label><br><input type="text" name="id_user" id="id_user" size="30"><br><br>');
         document.write('<input type="button" value="Restaurar" onclick="exibir()">');
@@ -93,28 +93,61 @@ function excluir(){
     var nid = document.querySelector('input[name="id_user"]').value;
     if(nid){
         localStorage.removeItem('dados_'+nid);
-        localStorage.status=0;
+        localStorage.status=0
     } else {
         var nidd = document.querySelector('input[name="id"]').value;
         localStorage.removeItem('dados_'+nidd);
-        localStorage.status=0;
+        localStorage.status=0
     }
 }
 
 function func_teste(){
     // var n = document.getElementsByTagName("teste").value;
-    var t1 = document.querySelector('input[name="teste"]').value;
+    // var t1 = document.querySelector('input[name="teste"]').value;
     // var texto = t1.value;
-    console.log(t1);
+    // console.log(t1);
+    // const campo = $(".lb").val()
+    // var n = $(this).val($(this).attr("placeholder")).val()
+    // console.log(campo)
 
-    // console.log(n[0].value);
-
+    
     // var els = $("[name=test]");
     // console.log(els);
 
     // alert($("[name=teste]").attr("value"))
-
-    
     
 }
+
+$(document).on('click', 'btnTeste', function() {
+    if ($(element).hasClass('any_class')) {
+        console.log('nao')
+    } else {
+        console.log('sim')
+    }
+})
+
+$(document).on('focusout', '.salvar-valor', function(){
+    const value = $(this).val()
+    const name = $(this).prop('name')
+    const classe = 'peca'
+    // const nome = name.split('[]')
+    localStorage.setItem(nome, value)
+    // const obj = localStorage.getItem(nome);
+    // console.log(classe, obj)
+    // const id_user = "<?=$_SESSION['id']>"
+    // const dados = [{classe}, {value}]
+    // console.log(dados)
+    // dados_json=JSON.stringify(dados)
+    // localStorage.setItem('dados', dados_json)
+    const json = {
+        peca: [{}]
+    }
+
+    json[classe][0][name] = value
+    console.log(json['peca'][0][name])
+    dados_json=JSON.stringify(json)
+    localStorage.setItem('dados', dados_json)
+    console.log(value, name)
+    
+})
 
