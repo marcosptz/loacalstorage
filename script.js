@@ -151,3 +151,11 @@ $(document).on('focusout', '.salvar-valor', function(){
     
 })
 
+$(document).ready(function(){
+    $(".valor").on("input", function(){
+        var textoDigitado = $(this).val();
+        var inputCusto = $(this).attr("custo");
+        $("#"+ inputCusto).val(textoDigitado);
+    });
+});
+
